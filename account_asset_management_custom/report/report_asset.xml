@@ -1,0 +1,10 @@
+<odoo>
+<report
+        id="action_asset_report_excel"
+        model="account.asset"
+        report_type="xlsx"
+        string="Asset Purchase Report"
+        name="account_asset_management_custom.asset_report_xls"
+        file="account_asset_management_custom.asset_report_xls"
+    />
+</odoo>

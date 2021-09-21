@@ -1,0 +1,32 @@
+<odoo>
+    <data>
+        <record id="ia_account_asset_inherit" model="ir.ui.view">
+            <field name="name">account.asset.inherit</field>
+            <field name="model">account.asset</field>
+            <field name="priority">20</field>
+            <field name="inherit_id" ref="account_asset_management.account_asset_view_form"/>
+            <field name="arch" type="xml">               
+                <xpath expr="/form/sheet/notebook/page/group/group/field[@name='method_end']" position="replace">
+                    <field name="method_end" invisible="1"/>
+                </xpath>
+                <xpath expr="/form/sheet/notebook/page/group/group/field[@name='days_calc']" position="replace">
+                     <field name="days_calc" invisible="1"/>
+                </xpath>
+                <xpath expr="/form/sheet/notebook/page/group/group/field[@name='use_leap_years']" position="replace">
+                    <field name="use_leap_years" invisible="1"/>               
+                </xpath>
+                <xpath expr="//button[@name='compute_depreciation_board']" position="replace">
+                    <button type="object" name="compute_depreciation_board"
+                            string=" Compute" icon="fa-gears"
+                            attrs="{'invisible': [('state', 'in', ['open','close', 'removed'])]}"/>
+                </xpath>
+                <xpath expr="//field[@name='account_analytic_id']" position="replace">     
+                        <field name="account_analytic_id" groups="analytic.group_analytic_accounting" options="{'no_create_edit': True,'no_create': True}" string ="Asset Analytic"/>
+          
+                </xpath>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

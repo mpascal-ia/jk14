@@ -1,0 +1,35 @@
+<openerp>
+    <data>
+        <record id="view_asset_confirm_form_id" model="ir.ui.view">
+            <field name="name">asset.confirm.results.wizard.form</field>
+            <field name="model">asset.confirm.results</field>
+            <field name="arch" type="xml">
+                <form string="Confirm asset">
+                <sheet>
+                    <p class="oe_grey">
+                        Are you sure you want to confirm assets?
+                    </p>
+                </sheet>
+                <footer>
+                    <button name="action_confirm_asset"  type="object"  string="Confirm Asset" default_focus="1" class="btn-primary"/>
+                    <button string="Cancel" class="btn-default" special="cancel" />
+                </footer> 
+                </form>
+            </field>
+        </record>          
+        
+        <act_window id="action_confirm_asset_wizard"
+            name="Confirm Asset"
+            src_model="account.asset"
+            res_model="asset.confirm.results"
+            view_type="form" view_mode="form"
+            view_id="view_asset_confirm_form_id" 
+            key2="client_action_multi" target="new"/>
+
+
+         <menuitem id="account_asset_management.menu_finance_assets"
+            name="Assets"
+            parent="account_accountant.menu_accounting"
+            sequence="9"/>
+    </data>
+</openerp>
