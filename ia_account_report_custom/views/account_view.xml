@@ -1,0 +1,7 @@
+<odoo>
+     <template id="ia_account_financil_report_width" name="Order Options" inherit_id="account_reports.main_template">
+        <xpath expr="//div[hasclass('container')]" position="attributes">
+        <attribute name="style">max-width: 100%;</attribute>           
+        </xpath>
+    </template>       
+</odoo>

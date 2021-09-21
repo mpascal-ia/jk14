@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <template id="followup_report_inherit_hide_invoice_number" inherit_id="account_reports.line_template_followup_report">
+            <xpath expr="//div[hasclass('dropdown')]//a[hasclass('dropdown-toggle')]" position="replace" />
+        </template>
+        
+    </data>
+</odoo>
